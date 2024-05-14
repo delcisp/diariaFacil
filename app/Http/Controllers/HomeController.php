@@ -10,8 +10,13 @@ class HomeController extends Controller
     {
        if(Auth::user()->usertype == '2') {
         return view('diarista.cadastro');
-       } else {
+       }
+       else if (Auth::user()->usertype == '1') {
+        return view('dashboard');
+       }
+        else {
         return view('contratante.cadastro');
        }
     }
+
 }

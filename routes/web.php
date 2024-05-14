@@ -19,8 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/registerdiarista', function() {
+    return view('registerdiarista');
+});
+
+Route::get('/registercontratante', function() {
+    return view('registercontratante');
+});
+
 Route::get('/view', function () {
     return view('view');
+});
+Route::get('tipoperfil', function () {
+    return view('tipoperfil');
 });
 
 Route::middleware([
