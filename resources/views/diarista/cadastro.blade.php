@@ -72,7 +72,7 @@
                     Horas Solicitadas
                 </th>
                 <th scope="col" class="px-4 py-2">
-                    Valor proposto
+                    Valores proposto
                 </th>
                 <th scope="col" class="px-14 py-2">
                     AÇÃO
