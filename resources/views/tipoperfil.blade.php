@@ -1,9 +1,9 @@
 @extends ('master')
 @section('content')
 
-<div class="body w-full bg-[#D6C9F2] grid justify-items-center">
+<div class="body bg-[#D6C9F2] flex justify-center items-center min-h-screen">
   <div class="grid place-items-center">
-    <div class="ms-20 grid mt-7 mb-40 bg-[#fafafa] rounded border-2 border-[#705abf] w-5/6"  >
+    <div class="ms-20 grid bg-[#fafafa] rounded border-2 border-[#705abf]"  >
 
       <div class="grid  ">
         <img class="text-center " src="img/etiquetas.png"

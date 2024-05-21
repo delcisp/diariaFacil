@@ -49,10 +49,10 @@
             <div
                 class="relative mt-3 mb-3 flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 mx-5 border border-white bg-white">
                 <div class="w-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="img/tuqui.jpg" alt="tailwind logo" class="rounded-xl" />
+                    <img src="img/avatar.png" alt="tailwind logo" class="rounded-xl w-8/12" />
             </div>
-                    <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
-                        <div class="flex justify-between item-center">
+                    <div class="w-full bg-white flex flex-col space-y-2 p-3">
+                        <div class="flex justify-between item-start">
                             <p class="text-gray-500 font-medium hidden md:block">Serviços de Limpeza</p>
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20"
@@ -76,9 +76,9 @@
                             <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
                                 Verificado</div>
                         </div>
-                        <h3 class="font-black text-gray-800 md:text-3xl text-xl">Nome da Diariasta</h3>
-                        <p class="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, excepturi odit minus a
-                            tque illum placeat est unde ea veritatis aliquam doloribus eveniet quas praesentium possimus fugit fugiat itaque adipisci vero.</p>
+                        <h3 class="font-black text-gray-800 md:text-3xl text-xl">Maria Mariana</h3>
+                        <p class="md:text-lg text-gray-500 text-base">Olá! Sou Maria, uma profissional de limpeza com mais de 10 anos de experiência. Sou conhecida por minha atenção aos detalhes
+                             e pela dedicação em deixar cada canto da sua casa impecável. Utilizo produtos de alta qualidade e técnicas eficientes para garantir uma limpeza profunda e duradoura. Estou sempre pronta para adaptar meu serviço às suas necessidades específicas e horários. Contrate-me e veja sua casa brilhar como nunca!</p>
                         <p class="text-xl font-black text-gray-800">
                             $150,00
                             <span class="font-normal text-gray-600 text-base">/diária</span>
@@ -106,10 +106,10 @@
                 <div
                 class="relative mt-3 mb-3 flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 mx-5 border border-white bg-white">
                 <div class="w-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="img/tuqui.jpg" alt="tailwind logo" class="rounded-xl" />
+                    <img src="img/3.png" alt="tailwind logo" class="rounded-xl w-8/12" />
             </div>
-                    <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
-                        <div class="flex justify-between item-center">
+                    <div class="w-full bg-white flex flex-col space-y-2 p-3">
+                        <div class="flex justify-between item-start">
                             <p class="text-gray-500 font-medium hidden md:block">Serviços de Limpeza</p>
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20"
@@ -133,11 +133,11 @@
                             <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
                                 Verificado</div>
                         </div>
-                        <h3 class="font-black text-gray-800 md:text-3xl text-xl">Nome da Diariasta</h3>
-                        <p class="md:text-lg text-gray-500 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, excepturi odit minus a
-                            tque illum placeat est unde ea veritatis aliquam doloribus eveniet quas praesentium possimus fugit fugiat itaque adipisci vero.</p>
+                        <h3 class="font-black text-gray-800 md:text-3xl text-xl">Ana Banana</h3>
+                        <p class="md:text-lg text-gray-500 text-base">Meu nome é Ana e sou uma diarista apaixonada pelo que faço. Com 7 anos de experiência no setor, ofereço um serviço de limpeza completo e de alta qualidade. Tenho experiência em limpar casas, apartamentos e escritórios, sempre garantindo um ambiente limpo e organizado. Sou pontual, confiável
+                             e trabalho com discrição e eficiência. Se você procura alguém que cuide da sua casa com o mesmo cuidado que você, estou aqui para ajudar!</p>
                         <p class="text-xl font-black text-gray-800">
-                            $150,00
+                            $180,00
                             <span class="font-normal text-gray-600 text-base">/diária</span>
                         </p>
                         <div class="flex  me-5 ">
@@ -157,6 +157,7 @@
 
                         </div>
                     </div>
+
                 </div>
 
                   <div class="flex mx-auto ">
