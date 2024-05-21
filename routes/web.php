@@ -1,18 +1,10 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/', function () {
@@ -27,6 +19,10 @@ Route::get('/registercontratante', function() {
     return view('registercontratante');
 });
 
+Route::get('/profile', function() {
+    return view('diarista/profile');
+});
+
 Route::get('/view', function () {
     return view('view');
 });
@@ -39,7 +35,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [AdminController::class, 'show'])->name('dashboard');
 });
