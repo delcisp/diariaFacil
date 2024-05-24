@@ -21,12 +21,11 @@ return new class extends Migration
             $table->string('cep', 8)->index();
             $table->string('cidade');
             $table->string('estado');
-            $table->integer('numcasa');
             $table->string('rua');
             $table->string('descricao');
             $table->string('experiencias');
-            $table->string('anosexperiencia');
-            $table->string('escolaridade');
+            $table->string('valor_hora');
+            $table->string('valor_diaria');
             $table->string('dias_disponiveis');
             $table->string('disponivel_fds');
             $table->string('linkedin');
@@ -34,11 +33,7 @@ return new class extends Migration
             $table->string('cartarecomendacao')->nullable();
             $table->string('telefone');
             $table->integer('segundo_telefone');
-            $table->string('tiporesidencia');
-            $table->string('tamanhoresidencia');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->integer('pqcontratar');
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('users_id')->references('id')->on('users');

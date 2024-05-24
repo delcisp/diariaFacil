@@ -12,10 +12,12 @@ class HomeController extends Controller
         return view('diarista.cadastro');
        }
        else if (Auth::user()->usertype == '1') {
-        return view('dashboard');
+        $users = User::all();
+        return view('dashboard', compact('users'));
        }
         else {
         return view('contratante.cadastro');
+
        }
     }
 

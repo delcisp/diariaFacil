@@ -59,8 +59,8 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $user->name }}
                     </th>
-                    <td class="px-6 py-4">
-                        {{ $user->type }}
+                    <td class="px-8 py-4">
+                        {{ $user->usertype }}
                     </td>
                     <td class="px-6 py-4">
                         {{ $user->created_at->format('d/m/Y') }}
