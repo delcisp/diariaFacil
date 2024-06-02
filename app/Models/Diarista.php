@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Diarista extends Model
 {
-    use HasFactory;
+    protected $table = 'dados_diarista';
+    protected $fillable = ['users_id', 'foto_perfil', 'idade', 'sexo', 'cpf', 'telefone', 'segundo_telefone',
+'rua', 'cep', 'cidade', 'estado', 'valor_hora', 'valor_diaria', 'disponivel_fds', 'linkedin',
+'descricao', 'experiencias', 'especialidades', 'pqcontratar'];
 }

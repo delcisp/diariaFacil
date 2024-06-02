@@ -33,7 +33,7 @@ return new class extends Migration
             $table->string('cartarecomendacao')->nullable();
             $table->string('telefone');
             $table->integer('segundo_telefone');
-            $table->integer('pqcontratar');
+            $table->string('pqcontratar');
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('users_id')->references('id')->on('users');
