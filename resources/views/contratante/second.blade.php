@@ -9,10 +9,9 @@
         </h2>
     </x-slot>
 <div class="container mx-auto mt-5 border-[#6D0FF2] border rounded ">
-
     <form class="max-w mt-3 mx-3">
         <div class="flex">
-            <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Your Email</label>
+            <label for="search-dropdown" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Seu email</label>
             <button id="dropdown-button" data-dropdown-toggle="dropdown" class="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600" type="button">Filtrar por <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
       </svg></button>
@@ -43,8 +42,6 @@
             </div>
         </div>
     </form>
-
-        <!-- component -->
         @foreach ($diaristas as $index=>$item)
         <div class="mt-3 mb-3 flex flex-col justify-center">
             <div
@@ -78,11 +75,14 @@
                             <div class="bg-gray-200 px-3 py-1 rounded-full text-xs font-medium text-gray-800 hidden md:block">
                                 Verificado</div>
                         </div>
-                        <h3 class="font-black text-gray-800 md:text-3xl text-xl"> {{$item->name}} </h3>
-                        <p class="md:text-lg text-gray-500 text-base"> {{$item->descricao}} </p>
+                        <h3 class="font-black text-gray-800 md:text-3xl text-xl"> {{$item->user->name }} {{$item->user->lastname }} </h3>
+                        <p class="md:text-lg text-gray-500 text-base"> {{$item->descricao}}  </p>
                         <p class="text-xl font-black text-gray-800">
-                            {{$item->valor_diaria}}
+                            {{$item->valor_hora}}
+                            <span class="font-normal text-gray-600 text-base">/hora</span>
+                            {{$item->valor_diaria }}
                             <span class="font-normal text-gray-600 text-base">/diária</span>
+
                         </p>
                         <div class="flex  me-5 ">
                             <div class="flex-grow-0">

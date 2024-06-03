@@ -24,6 +24,9 @@ Route::get('/home', [ContratanteController::class, 'index'])->name('diaristas');
 Route::get('/registerdiarista', function() {
     return view('registerdiarista');
 });
+Route::get('/individual', function() {
+    return view('contratante/individual');
+});
 
 Route::get('/registercontratante', function() {
     return view('registercontratante');
