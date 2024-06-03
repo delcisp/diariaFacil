@@ -19,7 +19,7 @@ Route::get('/profilec', function() {
     return view('contratante/profilec');
 });
 Route::post('/profilec', [ContratanteController::class, 'store'])->name('store.profilecontratante');
-
+Route::get('/home', [ContratanteController::class, 'index'])->name('diaristas');
 
 Route::get('/registerdiarista', function() {
     return view('registerdiarista');

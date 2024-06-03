@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contratante extends Model
 {
-    use HasFactory;
+    protected $table = 'dados_contratante';
+    protected $fillable = ['users_id', 'foto_perfil', 'idade', 'sexo', 'cpf', 'telefone', 'segundo_telefone',
+'rua', 'cep', 'cidade', 'estado', 'tiporesidencia', 'tamanhoresidencia'];
 }

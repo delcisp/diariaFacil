@@ -6,9 +6,11 @@ use App\Models\Diarista;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class DiaristaController extends Controller
 {
+
     public function store(Request $request)
     {
         $users_id = Auth::user()->id;
@@ -29,9 +31,9 @@ class DiaristaController extends Controller
             'disponivel_fds'  => ['required', 'max:50'],
             'linkedin'  => ['max:255'],
             'descricao'  => ['required', 'max:500'],
-            'experiencias'  => ['required', 'max:50'],
-            'especialidades'  => ['required', 'max:50'],
-            'pqcontratar'  => ['required', 'max:50'],
+            'experiencias'  => ['required', 'max:1000'],
+            'especialidades'  => ['required', 'max:1000'],
+            'pqcontratar'  => ['required', 'max:1000'],
         ]);
         $imageName = null;
         if ($request->hasFile('foto_perfil')) {
@@ -61,6 +63,10 @@ class DiaristaController extends Controller
             'especialidades' => $request->especialidades,
             'pqcontratar' => $request->pqcontratar
         ]);
+
+        $user = User::find($users_id);
+        $user->profile_completed = true;
+        $user->save();
 
         return redirect('/home');
     }

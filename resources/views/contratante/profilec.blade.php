@@ -65,12 +65,19 @@
             </div>
           </div>
           <div class="sm:col-span-2">
-            <label for="sexo" class="block text-sm font-medium leading-6 text-[#6D0FF2]" value="{{ __('Sexo')}}">Sexo</label>
+            <label for="sexo" class="block text-sm font-medium leading-6 text-[#6D0FF2]" value="{{ __('sexo')}}">Sexo</label>
             <div class="mt-2">
-              <input type="text" name="sexo" id="sexo" autocomplete="sexo" :value="old('sexo')" required autofocus class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" name="sexo" :value="old('sexo')" required autofocus>
+                <option value="Selecione">Selecione</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
             </div>
-          </div>
-
+        </div>
           <div class="sm:col-span-2">
             <label for="cpf" class="block text-sm font-medium leading-6 text-[#6D0FF2]" value="{{ __('Cpf')}}">CPF</label>
             <div class="mt-2">
@@ -117,14 +124,28 @@
             </div>
           </div>
 
-          <div class="col-span-full">
-            <label for="descricao" class="block text-sm font-medium leading-6 text-[#6D0FF2]" value="{{ __ ('descricao')}}" >Faça uma descrição sobre si</label>
+        <div class="sm:col-span-2">
+            <label for="tiporesidencia" class="block text-sm font-medium leading-6 text-[#6D0FF2]" value="{{ __('tiporesidencia')}}">Qual o tipo de residência para a limpeza?</label>
             <div class="mt-2">
-              <textarea id="descricao" name="descricao" rows="3" :value="old('descricao')" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+              <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" name="tiporesidencia" :value="old('tiporesidencia')" required autofocus>
+                <option value="Selecione">Selecione</option>
+                <option value="Casa">Casa </option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Kitnet">Kitnet</option>
+                <option value="Mansão">Mansão</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+              </div>
             </div>
-            <p class="mt-3 text-sm leading-6 text-[#B99AD9]">Fale sobre suas habilidades técnicas (ex: limpeza, organização, cuidado com roupas), socioemocionais (ex: responsabilidade, pontualidade, cordialidade), e sua experiência profissional (ex: anos de trabalho, tipos de ambientes em que já trabalhou).</p>
+        </div>
+        <div class="col-span-full" style="resize: none;">
+            <label for="Tamanhoresidencia" class="block text-sm font-medium leading-6 text-[#6D0FF2]"  value="{{ __('Tamanhoresidencia')}}" >Qual o tamanho da residência?</label>
+            <div class="mt-2">
+              <textarea placeholder="exemplo: casa de 2 quartos, cozinha e dois banheiros." id="Tamanhoresidencia" name="tamanhoresidencia" rows="3" :value="old('Tamanhoresidencia')" required autofocus   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+            </div>
+            <p class="mt-3 text-sm leading-6 text-[#B99AD9]">Especifique em metragem, número de cômodos para auxiliar na estimativa de tempo e valor do serviço.</p>
           </div>
-
         </div>
 
       </div>
