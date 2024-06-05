@@ -13,20 +13,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/individual', [ContratanteController::class, 'listing'])->name('listing');
+
 Route::post('/profile', [DiaristaController::class, 'store'])->name('store.profilediarista');
 
 Route::get('/profilec', function() {
     return view('contratante/profilec');
 });
 Route::post('/profilec', [ContratanteController::class, 'store'])->name('store.profilecontratante');
-Route::get('/home', [ContratanteController::class, 'index'])->name('diaristas');
+
 
 Route::get('/registerdiarista', function() {
     return view('registerdiarista');
 });
-Route::get('/individual', function() {
-    return view('contratante/individual');
-});
+
 
 Route::get('/registercontratante', function() {
     return view('registercontratante');
@@ -48,6 +48,6 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'show'])->name('dashboard');
+    Route::get('/home', [HomeController::class, 'index']);
 });
 

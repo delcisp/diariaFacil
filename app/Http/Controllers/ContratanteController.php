@@ -11,11 +11,11 @@ use App\Models\User;
 class ContratanteController extends Controller
 {
 
-    public function index() {
+    public function listing () {
         $diaristas = Diarista::with('user')->get();
         $name = Auth::user()->name;
         $title = 'diaristas';
-        return view('contratante.second', compact('title', 'diaristas', 'name'));
+        return view('contratante.individual', compact('title', 'diaristas', 'name'));
     }
 
     public function store(Request $request)
