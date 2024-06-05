@@ -59,13 +59,22 @@
               <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
               {{$item->cidade}}, {{$item->estado}}
             </div>
-            <div class="mb-2 text-blueGray-600 mt-10">
-              <i class="fa-solid fa-hand-holding-dollar me-2"></i> Valor/diária: {{$item->valor_diaria}}</dir>
-            </div>
-            <div class="mb-2 text-blueGray-600">
-              <i class="fa-solid fa-hand-holding-dollar me-2"></i>Valor/hora: {{$item->valor_hora}}
-              <p class="text-small mt-1">*Os valores podem ser alterados</p>
-            </div>
+            <div class="grid grid-cols-4 gap-3">
+                <div class="text-start ms-1">
+                    <i class="fa-solid fa-hand-holding-dollar me-2"></i> Valor/diária: {{$item->valor_diaria}}
+                </div>
+                <div class="text-start ms-1">
+                    <i class="fa-solid fa-hand-holding-dollar me-2"></i> Valor/hora: {{$item->valor_hora}}
+                </div>
+                <div class="text-start ms-1">
+                    <p>Disponível no fim de semana:</p>
+                    <p>{{$item->disponivel_fds}}</p>
+                </div>
+                <div class="text-start ms-1">
+                    <i class="fa-solid fa-phone me-2"></i>{{$item->telefone}}
+                </div>
+              </div>
+
           </div>
           <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
             <div class="flex flex-wrap justify-center">
@@ -73,7 +82,7 @@
                 <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
                     {{$item->descricao}}
                 </p>
-                <a href="#pablo" class="font-normal text-pink-500">Show more</a>
+                <a href="/individual" class="font-normal text-pink-500">Show more</a>
               </div>
             </div>
           </div>
