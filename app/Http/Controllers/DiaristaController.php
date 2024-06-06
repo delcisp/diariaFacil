@@ -37,8 +37,8 @@ class DiaristaController extends Controller
         ]);
         $imageName = null;
         if ($request->hasFile('foto_perfil')) {
-            $imageName = time() . '.' . $request->avatar->extension();
-            $request->avatar->move(public_path('storage/users'), $imageName);
+            $imageName = time() . '.' . $request->file('foto_perfil')->extension();
+            $request->file('foto_perfil')->move(public_path('storage/users'), $imageName);
         }
 
         $diarista = Diarista::create([

@@ -11,12 +11,14 @@ use App\Models\User;
 class ContratanteController extends Controller
 {
 
-    public function listing () {
-        $diaristas = Diarista::with('user')->get();
+
+    public function listing($id) {
+        $diarista = Diarista::findOrFail($id);
         $name = Auth::user()->name;
         $title = 'diaristas';
-        return view('contratante.individual', compact('title', 'diaristas', 'name'));
+        return view('contratante.individual', compact('title', 'diarista', 'name'));
     }
+
 
     public function store(Request $request)
     {

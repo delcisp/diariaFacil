@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ContratanteController;
 use App\Http\Controllers\DiaristaController;
+use App\Http\Controllers\PropostaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,7 +14,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/individual', [ContratanteController::class, 'listing'])->name('listing');
+Route::get('/individual/{id}', [ContratanteController::class, 'listing'])->name('listing');
+Route::post('/individual/{diarista_id}', [PropostaController::class, 'store'])->name('store.proposta');
 
 Route::post('/profile', [DiaristaController::class, 'store'])->name('store.profilediarista');
 

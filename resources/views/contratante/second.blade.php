@@ -47,7 +47,11 @@
             <div
                 class="relative mt-3 mb-3 flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 mx-5 border border-white bg-white">
                 <div class="w-full md:w-1/3 bg-white grid place-items-center">
-                    <img src="img/avatar.png" alt="tailwind logo" class="rounded-xl w-8/12" />
+                    @if ($item->foto_perfil)
+                    <img src="{{ asset('storage/users/' . $item->foto_perfil) }}" alt="Profile Photo" class="rounded-xl w-8/12" />
+                @else
+                    <img src="img/logo.png" alt="Default Avatar" class="rounded-xl w-8/12" />
+                @endif
             </div>
                     <div class="w-full bg-white flex flex-col space-y-2 p-3">
 
@@ -86,23 +90,21 @@
                         </p>
                         <div class="flex  me-5 ">
                             <div class="flex-grow-0">
-                                <a href="/#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#B99AD9] rounded-lg hover:bg-[#F2B807] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#F2B807] dark:hover:bg-[#F2B807] dark:focus:ring-[#F2B807]">
-                                    Contratar
+                            <a href="https://wa.me/{{ preg_replace('/\D+/', '', $item->telefone) }}?text={{ urlencode('Olá! Estou vindo pela plataforma DiariaFacil e gostaria de mais informações sobre o seu serviço.') }}"class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#B99AD9] rounded-lg hover:bg-[#F2B807] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#F2B807] dark:hover:bg-[#F2B807] dark:focus:ring-[#F2B807]">
+                                    Entrar em contato
                                 </a>
                             </div>
+
                             <div class="flex-grow-0 ms-3">
-                                <a href="/individual" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#B99AD9] rounded-lg hover:bg-[#F2B807] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#F2B807] dark:hover:bg-[#F2B807] dark:focus:ring-[#F2B807]">
+                                <a href="{{ route('listing', ['id' => $item->id]) }}" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#B99AD9] rounded-lg hover:bg-[#F2B807] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#F2B807] dark:hover:bg-[#F2B807] dark:focus:ring-[#F2B807]">
                                     Ver detalhes
                                     <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                                     </svg>
                                 </a>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
                 @endforeach
                   <div class="flex mx-auto ">
