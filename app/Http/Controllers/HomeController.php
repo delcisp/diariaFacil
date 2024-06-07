@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Proposta;
 use App\Models\Diarista;
 class HomeController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
+            $user = Auth::user();
 
-        if ($user->usertype == '2') {
-            if ($user->profile_completed) {
-                return view('diarista.second');
-            } else {
-                return view('diarista.cadastro');
-            }
-        } elseif ($user->usertype == '1') {
+            if ($user->usertype == '2') {
+                if ($user->profile_completed) {
+                    return redirect()->route('diarista.second');
+                } else {
+                    return view('diarista.cadastro');
+                }
+            } elseif ($user->usertype == '1') {
             $users = User::all();
             return view('dashboard', compact('users'));
         } else {

@@ -48,13 +48,22 @@
                 </div>
             </div>
 
-            <div id="myModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+            <div id="myModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 ms-2">
                 <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-lg w-full">
                   <div class="p-6">
                     <h3 class="text-lg leading-6 font-medium text-[#6D0FF2]">PROPOSTA DE SERVIÇO</h3>
                     <div class="mt-2">
                         <form action="{{ route('store.proposta', ['diarista_id' => $diarista->id]) }}" method="POST">
                         @csrf
+                        @if ($errors->any())
+                        <div class="bg-red-500 text-white p-3 rounded mb-4">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                         <div class="mb-4">
                           <label class="block text-[#6D0FF2] text-sm font-bold mb-2" for="location">
                             Endereço do local para a limpeza
@@ -65,7 +74,7 @@
                             <label class="block text-[#6D0FF2] text-sm font-bold mb-2" for="cep">
                               CEP
                             </label>
-                            <input name="cep" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cep" type="text" placeholder="">
+                            <input name="cep_local" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="cep" type="text" placeholder="">
                           </div>
                           <div class="mb-4">
                             <label class="block text-[#6D0FF2] text-sm font-bold mb-2" for="data_limpeza">
@@ -148,7 +157,6 @@
                     <i class="fa-solid fa-phone me-2"></i>{{$diarista->telefone}}
                 </div>
               </div>
-
           </div>
           <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
             <div class="flex flex-wrap justify-center">
@@ -156,7 +164,7 @@
                 <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
                     {{$diarista->descricao}}
                 </p>
-                <a href="/individual" class="font-normal text-pink-500">Show more</a>
+                <a href="/home" class="font-normal text-pink-500">Voltar</a>
               </div>
             </div>
           </div>
@@ -169,26 +177,34 @@
   </section>
 </main>
 <script>
-    // JavaScript para controlar a visibilidade do modal
+document.addEventListener('DOMContentLoaded', function () {
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const myModal = document.getElementById('myModal');
 
-    openModalBtn.addEventListener('click', () => {
-      myModal.classList.remove('hidden');
-    });
+    if (openModalBtn && closeModalBtn && myModal) {
+        openModalBtn.addEventListener('click', () => {
+            myModal.classList.remove('hidden');
+        });
 
-    closeModalBtn.addEventListener('click', () => {
-      myModal.classList.add('hidden');
-    });
+        closeModalBtn.addEventListener('click', () => {
+            myModal.classList.add('hidden');
+        });
 
-    document.getElementById('openModalBtn').addEventListener('click', function() {
-    document.getElementById('myModal').classList.remove('hidden');
-    document.getElementById('alert').classList.remove('hidden');
-    setTimeout(function() {
-        document.getElementById('alert').classList.add('hidden');
-    }, 10000);
+        // Código para o alerta (caso necessário)
+        openModalBtn.addEventListener('click', function () {
+            document.getElementById('myModal').classList.remove('hidden');
+            const alert = document.getElementById('alert');
+            if (alert) {
+                alert.classList.remove('hidden');
+                setTimeout(function () {
+                    alert.classList.add('hidden');
+                }, 10000);
+            }
+        });
+    }
 });
+
 
   </script>
 

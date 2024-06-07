@@ -14,4 +14,9 @@ class Diarista extends Model
     protected $fillable = ['users_id', 'foto_perfil', 'idade', 'sexo', 'cpf', 'telefone', 'segundo_telefone',
 'rua', 'cep', 'cidade', 'estado', 'valor_hora', 'valor_diaria', 'disponivel_fds', 'linkedin',
 'descricao', 'experiencias', 'especialidades', 'pqcontratar'];
+public function contratante()
+    {
+        return $this->belongsTo(Proposta::class, 'users_id');
+    }
+
 }

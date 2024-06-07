@@ -15,7 +15,7 @@ return new class extends Migration
 
                 $table->id();
                 $table->unsignedBigInteger('users_id');
-                $table->foreignId('contratante_id')->constrained('dados_contratante')->onDelete('cascade');
+                $table->string('name_contratante');
                 $table->foreignId('diarista_id')->constrained('dados_diarista')->onDelete('cascade');
                 $table->string('local_limpeza');
                 $table->string('cep_local');

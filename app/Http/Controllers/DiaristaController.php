@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diarista;
+use App\Models\Proposta;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
@@ -70,4 +71,14 @@ class DiaristaController extends Controller
 
         return redirect('/home');
     }
+
+    public function showPropostas()
+    {
+        $diarista_id = Auth::user()->id;
+        $propostas = Proposta::where('diarista_id', $diarista_id)->get();
+
+        return view('diarista.second', compact('propostas'));
+    }
+
+
 }

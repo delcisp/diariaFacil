@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('cidade');
             $table->string('estado');
             $table->string('rua');
-            $table->string('descricao');
             $table->string('telefone');
             $table->integer('segundo_telefone');
             $table->string('tiporesidencia');
